@@ -3,16 +3,16 @@ import Link from "../components/Link.astro";
 ---
 
 <div x-data="{ showmenu: false }" class="p-4 fixed z-10 w-full bg-gray-100">
-  <div id="navbar" class="flex flex-row justify-between">
-    <div id="logo" class="">
-      <a class="uppercase font-bold text-red-700" href="#link1">Københavnerbilleder</a>
+  <div id="navbar" class="flex flex-row justify-between max-w-7xl mx-auto pr-4 pl-4 pt-2 pb-2">
+    <div class="">
+      <a class="uppercase font-bold text-red-700" href="#logo">Københavnerbilleder</a>
     </div>
     <nav id="desktopmenu" class="hidden lg:block">
       <ul class="flex flex-row gap-4">
-        <li class=""><Link href="#cph">Københavnerbilleder</Link></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-        <li class=""><Link href="#bogen">Bogens indhold</Link></li>
-        <li class=""><Link href="#forfatter">Forfatteren</Link></li>
-        <li class=""><Link href="#kob">Køb nu</Link></li>
+        <li class=""><a href="#cph">Københavnerbilleder</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+        <li class=""><a href="#bogen">Bogens indhold</a></li>
+        <li class=""><a href="#forfatter">Forfatteren</a></li>
+        <li class=""><a href="#kob">Køb nu</a></li>
       </ul>
     </nav>
     <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
@@ -23,10 +23,10 @@ import Link from "../components/Link.astro";
   </div>
   <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
     <ul>
-      <li class="text-center py-2 border-y-2"><Link href="#">Københavnerbilleder</Link></li>
-      <li class="text-center py-2 border-b-2"><Link href="#">Bogens indhold</Link></li>
-      <li class="text-center py-2 border-b-2"><Link href="#">Forfatteren</Link></li>
-      <li class="text-center py-2 border-b-2"><Link href="#">Køb nu</Link></li>
+      <li class="text-center py-2 border-y-2"><a href="#cph">Københavnerbilleder</a></li>
+      <li class="text-center py-2 border-b-2"><a href="#bogen">Bogens indhold</a></li>
+      <li class="text-center py-2 border-b-2"><a href="#forfatter">Forfatteren</a></li>
+      <li class="text-center py-2 border-b-2"><a href="#kob">Køb nu</a></li>
     </ul>
   </nav>
 </div>
